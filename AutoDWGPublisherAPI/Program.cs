@@ -1,3 +1,9 @@
+using AutoDWGPublisherAPI.Model;
+
+ProjectFolders.Update();
+
+// Ikke kødd med det under
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

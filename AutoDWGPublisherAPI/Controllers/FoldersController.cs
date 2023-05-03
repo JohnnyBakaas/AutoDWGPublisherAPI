@@ -7,12 +7,20 @@ namespace AutoDWGPublisherAPI.Controllers
     [ApiController]
     public class FoldersController : ControllerBase
     {
+
+
         [HttpGet]
-        public ActionResult<Folder> Get()
+        public List<Folder> Get()
         {
-            var folder = new Folder("C:", "Test for Autocad greier");
-            folder.UpdateAll();
-            return folder;
+            ProjectFolders.Update();
+            return ProjectFolders.Projcts;
+        }
+
+        [HttpPut]
+        public ActionResult<string> Put(Folder folder)
+        {
+            Console.WriteLine(folder.Name);
+            return ProjectFolders.UpdateProject(folder);
         }
     }
 }
