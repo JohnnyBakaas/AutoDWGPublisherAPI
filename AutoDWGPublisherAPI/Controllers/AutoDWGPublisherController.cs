@@ -10,8 +10,9 @@ namespace AutoDWGPublisherAPI.Controllers
     public class AutoDWGPublisherController : ControllerBase
     {
 
-        [HttpGet("{filePath}")]
-        public async Task<string> Get(string filePath = "C:\\Test for Autocad greier\\P-10001")
+
+        [HttpGet]
+        public async Task<string> Get([FromQuery] string filePath = "C:\\Test for Autocad greier\\P-10001")
         {
             var theDWGPrinter = new AutoDWGPublisher();
             var output = await theDWGPrinter.PublishAllInFolder(filePath);

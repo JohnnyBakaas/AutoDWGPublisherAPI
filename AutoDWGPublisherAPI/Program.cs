@@ -1,6 +1,6 @@
 using AutoDWGPublisherAPI.Model;
 
-ProjectFolders.Update();
+DB.StartUp();
 
 // Ikke kødd med det under
 

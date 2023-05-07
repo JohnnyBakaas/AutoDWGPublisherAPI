@@ -5,15 +5,14 @@ namespace AutoDWGPublisherAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoldersController : ControllerBase
+    public class DWGController : ControllerBase
     {
 
-
-        [HttpGet]
-        public List<Folder> Get()
+        [HttpPut]
+        public ActionResult<string> Put(DWGFileFromFrontEnd dwg)
         {
-            ProjectFolders.Update();
-            return ProjectFolders.Projcts;
+            dwg.Publish();
+            return DB.UpdateDWG(dwg);
         }
     }
 }

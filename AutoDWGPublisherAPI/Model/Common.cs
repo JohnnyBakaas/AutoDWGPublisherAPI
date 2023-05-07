@@ -20,5 +20,10 @@
             }
             return false;
         }
+
+        public static async Task<string> StringToActionString(string returnMessage)
+        {
+            return returnMessage;
+        }
     }
 }

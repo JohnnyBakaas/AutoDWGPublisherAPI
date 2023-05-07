@@ -37,11 +37,8 @@
         public void GetDWGFiles()
         {
             var DWGNames = Directory.GetFiles($"{FolderPath}\\{Name}", "*.dwg");
-            Console.WriteLine("It is DWGs we are looking for");
             foreach (string dwgName in DWGNames)
             {
-                Console.WriteLine(dwgName);
-
                 DWGs.Add(new DWG(dwgName, $"{FolderPath}\\{Name}"));
             }
         }
